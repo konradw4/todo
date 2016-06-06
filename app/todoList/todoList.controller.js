@@ -17,5 +17,18 @@ export default class ToDoListController{
               this.author = "";
               this.task = "";
             }
+            
+        
+        this.removeTask = function(task){
+            if (task.author === $rootScope.authData.password.email) {
+                this.tasks.$remove(task);
+                this.error = null;
+            }else{
+                this.error = "Nie jestes właścicielem tego taska";
+                console.log('nie jestes wlascicielem taska');
+            }
         }
+            
+    }
+        
 }

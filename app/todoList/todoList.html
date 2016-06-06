@@ -13,6 +13,8 @@
             </div>
           </div>
           
+          <div class="alert alert-danger" role="alert" ng-if="todoCtrl.error != null">{{todoCtrl.error}}</div>
+          
           <div class="table-responsive">
               <table class="table table-striped">
                   <thead>
@@ -25,6 +27,7 @@
                       <tr ng-repeat="task in todoCtrl.tasks">
                           <td>{{task.author}}</td>
                           <td>{{task.task}}</td>
+                          <td><button type="submit" class="btn btn-primary" ng-click="todoCtrl.removeTask(task)">Delete</button></td>
                       </tr>
                   </tbody>
               </table>

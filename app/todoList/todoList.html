@@ -12,5 +12,22 @@
               <button type="submit" class="btn btn-primary" ng-click="todoCtrl.addTask()">Add</button>
             </div>
           </div>
+          
+          <div class="table-responsive">
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th>Author</th>
+                          <th>Task</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr ng-repeat="task in todoCtrl.tasks">
+                          <td>{{task.author}}</td>
+                          <td>{{task.task}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
       
     </form>

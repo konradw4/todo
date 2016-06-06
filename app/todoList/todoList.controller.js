@@ -5,7 +5,7 @@ export default class ToDoListController{
         var taskRef = ref.child('task');
         
         //console.log($rootScope.authData.password.email);
-        
+
         this.tasks = $firebaseArray(taskRef);
         
         this.addTask = function(){
@@ -40,7 +40,15 @@ export default class ToDoListController{
                 console.log('nie jestes wlascicielem taska');
             }
         }
-            
+
+        this.filterTasks = function(type) {
+            if(type == 'all') {
+                this.filter = "";
+            } 
+            else if(type == 'my' && $rootScope.authData.password.email != "") {
+                  this.filter = $rootScope.authData.password.email;
+            }
+        }  
     }
         
 }

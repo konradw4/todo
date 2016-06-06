@@ -14,7 +14,9 @@
           </div>
           
           <div class="alert alert-danger" role="alert" ng-if="todoCtrl.error != null">{{todoCtrl.error}}</div>
-          
+          <button type="button" class="btn btn-default" ng-click="todoCtrl.filterTasks('all')">All tasks</button>
+          <button type="button" class="btn btn-default" ng-click="todoCtrl.filterTasks('my')">My tasks</button>
+
           <div class="table-responsive">
               <table class="table table-striped">
                   <thead>
@@ -25,7 +27,7 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr ng-repeat="task in todoCtrl.tasks">
+                      <tr ng-repeat="task in todoCtrl.tasks | filter:todoCtrl.filter">
                           <td>{{task.author}}</td>
                           <td>{{task.task}}</td>
                           <td>{{task.stat}}</td>

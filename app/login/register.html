@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-4 col-md-offset-4">
+            <h1 class="text-center login-title">Sign up</h1>
+                <form class="form-signin">
+                    <input type="text" class="form-control" placeholder="Email" ng-model="registerCtrl.email" required autofocus>
+                    <input type="password" class="form-control" placeholder="Password" ng-model="registerCtrl.password" required>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="registerCtrl.signup()">Sign up</button>
+                </form>
+            <a href="#/login" class="text-center new-account">Sing in</a>
+        </div>
+    </div>
+</div>

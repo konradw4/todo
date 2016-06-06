@@ -5,10 +5,11 @@ import uirouter from 'angular-ui-router';
 
 import routing from './config';
 
-
+import login from './login';
 
 const ngModule = angular
         .module('app', [
-          uirouter
+          uirouter,
+          login
         ])
         .config(routing);

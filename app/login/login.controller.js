@@ -22,13 +22,11 @@ export default class LoginController {
                   $rootScope.authData = authData;
                   $rootScope.logg = true;
                   console.log('z auth: ', $rootScope.authData);
-                  $location.path('/list');
+
               });
-              //$location.path('/list');
           }
-          //$location.path('/list');
       });
-      //$location.path('/list');
+      $location.path('/list');
     }
     
 

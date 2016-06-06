@@ -12,7 +12,7 @@ export default class ToDoListController{
               taskRef.push().set({
                 author: $rootScope.authData.password.email,
                 task: this.task,
-                stat: "unDone"
+                stat: "Active"
               });
               
               this.task = "";
@@ -41,14 +41,30 @@ export default class ToDoListController{
             }
         }
 
-        this.filterTasks = function(type) {
+        this.filterTasksUser = function(type) {
             if(type == 'all') {
                 this.filter = "";
             } 
             else if(type == 'my' && $rootScope.authData.password.email != "") {
                   this.filter = $rootScope.authData.password.email;
             }
-        }  
+        }
+        
+        this.filterTasks = function(type) {
+            if(type == 'all') {
+                this.filterTask = "";
+                console.log('all done');
+            } 
+            else if(type == 'Active') {
+                  this.filterTask = "Active";
+                  console.log('Active');
+            }
+            else if(type == 'Done') {
+                  this.filterTask = "Done";
+                  console.log('done');
+            }
+        }
+        
     }
         
 }
